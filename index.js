@@ -27,7 +27,7 @@ module.exports = function (options) {
     var str = file.contents.toString();
 
     // Clones the options object
-    var opts = assign({}, options);
+    var opts = assign({}, options, file.opts || {});
 
     // Injects the path of the current file
     opts.filename = file.path;
